@@ -1,0 +1,51 @@
+html {
+	font-size: 100%;
+	widht: 100vw;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+
+body {
+	width: 100%;
+	padding: 1em;
+	margin: auto;
+	max-width: 60em;
+}
+
+a {
+	color: gray;
+	text-decoration: none;
+}
+
+a:hover {
+	color: darkgray;
+}
+
+*::-moz-selection {
+	background: rgba(255, 255, 0, 0.3);
+	color: #000;
+}
+
+*::selection {
+	background: rgba(255, 255, 0, 0.3);
+	color: #000;
+}
+
+a::-moz-selection {
+	background: rgba(255, 255, 0, 0.3);
+	color: #0645ad;
+}
+
+a::selection {
+	background: rgba(255, 255, 0, 0.3);
+	color: #0645ad;
+}
+
+h2 {
+	padding-bottom: 0.3em;
+	border-bottom: 1px solid #ccc;
+}
+
+li {
+	margin: 0.2em 0;
+}

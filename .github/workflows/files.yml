@@ -1,0 +1,85 @@
+name: Generate files and deploy github pages
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: pandoc/extra
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate pdf file
+        run: |
+          pandoc README.md --css assets/styles.css --template assets/template.tex --embed-resources --standalone -o CV.pdf
+
+      - name: Generate html file
+        run: |
+          pandoc README.md --css assets/styles.css --embed-resources --standalone -o CV.html
+
+      - name: Generate docx file
+        run: |
+          pandoc README.md --css assets/styles.css --embed-resources --standalone -o CV.docx
+
+      - name: Upload generated files as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: CV
+          path: CV.*
+
+  commit-files:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Get generated CV files
+        uses: actions/download-artifact@v4
+        with:
+          name: CV
+
+      - name: Add and commit
+        uses: EndBug/add-and-commit@v9.1.4
+        with:
+          add: 'CV.pdf CV.html CV.docx'
+          default_author: github_actions
+          message: 'Add generated files'
+
+  prepare-pages:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get generated CV files
+        uses: actions/download-artifact@v4
+        with:
+          name: CV
+
+      - name: Copy the CV.html to index.html
+        run: mv CV.html index.html
+
+      - name: Upload static files as artifact for github pages
+        uses: actions/upload-pages-artifact@v3.0.1
+        with:
+          path: .
+
+  deploy:
+    needs: prepare-pages
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to github pages
+        uses: actions/deploy-pages@v4
