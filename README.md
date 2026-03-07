@@ -14,15 +14,12 @@ nmarekpub@proton.me • +48 534 900 231 • Kraków, Poland
 
 #### SoftNet (Intern, Nov 2022 - Dec 2022)
 
-- Developed Matplotlib visualizations to analyze fraud detection simulation results, helping banks optimize their systems to minimize false positives.
-- Designed and built Python-based visualizations for over 1000 bank configuration parameters, enabling cooperative banks to effectively fine-tune their system settings.
+- Developed Python-based (Matplotlib) visualization suites to analyze fraud simulations and 1,000+ configuration parameters, enabling banks to minimize false positives and fine-tune system settings.
 
 #### WeImpact.AI (Full-Stack Developer, Apr 2022 - Dec 2023)
 
-- Developed key features for a full-stack application, which included a Node.js and Firebase backend and a dynamic SvelteKit frontend, supporting hundreds of daily operations.
-- Managed the maintenance and updates for company websites, ensuring their reliability and currentness.
-- Developed a new user onboarding feature to streamline registration while simultaneously recommending and implementing a free, open-source alternative that eliminated a $50 monthly licensing fee.
-- Optimized database read operations, simplifying the core data-fetching logic to reduce code complexity and lower cloud function costs on a per-operation basis.
+- Developed key features for a SvelteKit/Firebase app, optimized database read operations to reduce cloud costs, and implemented an open-source onboarding flow that cut monthly licensing fees.
+- Managed end-to-end maintenance and updates for company-wide web platforms.
 
 ## Skills
 
