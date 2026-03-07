@@ -5,16 +5,17 @@ nmarekpub@proton.me • +48 534 900 231 • Kraków, Poland
 
 ## Experience
 
-#### SoftNet (Junior Software Developer, Jun 2024 - Present)
+#### SoftNet (Software Developer - formerly Intern, Jun 2024 - Present)
 
-- Maintained Java Spring backend, ensuring system reliability, and developed a new client management system for hotlines, using Angular with nearly 100% test coverage, simplifying bug report handling.
 - Implemented Docker to create standardized development environments, reducing the time and steps required to initialize a local instance from 7 to 3 and accelerating the onboarding of new programmers.
-- Achieved full industry compliance by implementing recommendations from software audits and collaborating with the team to establish new security processes.
-- Oversaw the vulnerability lifecycle by leveraging GitLab's security pipeline for automated SAST/DAST scanning, secret detection, and vulnerability prevention on merges, improving overall system integrity.
-
-#### SoftNet (Intern, Nov 2022 - Dec 2022)
-
+- Maintained Java Spring backend, ensuring system reliability, and developed a new client management system for hotlines, using Angular with nearly 100% test coverage, simplifying bug report handling.
+- Automated the vulnerability lifecycle using GitLab CI/CD (SAST/DAST) and secret detection. partnered with auditors to implement industry-standard security protocols.
 - Developed Python-based (Matplotlib) visualization suites to analyze fraud simulations and 1,000+ configuration parameters, enabling banks to minimize false positives and fine-tune system settings.
+
+#### Formation x Waymo Fellowship (Fellow, Jul 2025 - Jan 2026)
+
+- Mastered advanced algorithmic optimization, data structures, and scalable architecture for high-availability distributed systems.
+- Refined code quality and architectural standards through intensive technical deep-dives and reviews by Waymo and FAANG mentors.
 
 #### WeImpact.AI (Full-Stack Developer, Apr 2022 - Dec 2023)
 
