@@ -1,16 +1,19 @@
 # Nikodem Marek
 
-nmarekpub@proton.me • +48 534 900 231 • Kraków, Poland  
+nmarekpub@proton.me • +48 534 900 231 • Poland  
 [linkedin.com/in/nikodemmarek](https://linkedin.com/in/nikodemmarek) • [github.com/NikodemMarek](https://github.com/NikodemMarek)
 
 ## Experience
 
-#### SoftNet (Software Developer - formerly Intern, Jun 2024 - Present)
+#### Waymo (Software Engineer Intern, Jul 2026 - Sep 2026)
+
+- Built a high-throughput C++ simulation service orchestrating thousands of lightweight agents using statistical demand modeling. Designed fully deterministic, reproducible traffic generation to enable automated verification of mission-critical platforms.
+
+#### SoftNet (Software Developer - formerly Intern, Jun 2024 - Jun 2026)
 
 - Implemented Docker to create standardized development environments, reducing the time and steps required to initialize a local instance from 7 to 3 and accelerating the onboarding of new programmers.
 - Maintained Java Spring backend, ensuring system reliability, and developed a new client management system for hotlines, using Angular with nearly 100% test coverage, simplifying bug report handling.
 - Automated the vulnerability lifecycle using GitLab CI/CD (SAST/DAST) and secret detection. partnered with auditors to implement industry-standard security protocols.
-- Developed Python-based (Matplotlib) visualization suites to analyze fraud simulations and 1,000+ configuration parameters, enabling banks to minimize false positives and fine-tune system settings.
 
 #### Formation x Waymo Fellowship (Fellow, Jul 2025 - Jan 2026)
 
@@ -20,7 +23,6 @@ nmarekpub@proton.me • +48 534 900 231 • Kraków, Poland
 #### WeImpact.AI (Full-Stack Developer, Apr 2022 - Dec 2023)
 
 - Developed key features for a SvelteKit/Firebase app, optimized database read operations to reduce cloud costs, and implemented an open-source onboarding flow that cut monthly licensing fees.
-- Managed end-to-end maintenance and updates for company-wide web platforms.
 
 ## Skills
 
