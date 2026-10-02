@@ -20,7 +20,14 @@ $if(beamerarticle)$
 \usepackage{beamerarticle} % needs to be loaded first
 $endif$
 \usepackage{xcolor}
-\usepackage[top=0.75in, bottom=0.75in, left=1in, right=1in]{geometry}
+\definecolor{band}{HTML}{14213D}
+\definecolor{bandtext}{HTML}{D6E2F0}
+\definecolor{bandicon}{HTML}{7FB7E6}
+\definecolor{accent}{HTML}{1D6FA5}
+\definecolor{ink}{HTML}{1A1F2B}
+\definecolor{muted}{HTML}{6B7280}
+\definecolor{rule}{HTML}{CBD5E1}
+\usepackage[top=0.5in, bottom=0.55in, left=0.75in, right=0.75in]{geometry}
 $if(geometry)$
 \usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
 $endif$
@@ -36,11 +43,20 @@ $endif$
 $fonts.latex()$
 $font-settings.latex()$
 $common.latex()$
+\usepackage[default]{sourcesanspro}
+\usepackage[T1]{fontenc}
+\usepackage{fontawesome5}
+\usepackage{enumitem}
+\setlist[itemize]{leftmargin=1.1em, itemsep=0.15em, topsep=0.25em,
+  label={\color{accent}\scriptsize\raisebox{0.15ex}{$$\blacktriangleright$$}}}
+\color{ink}
+\setlength{\parskip}{0pt}
 $for(header-includes)$
 $header-includes$
 $endfor$
 $after-header-includes.latex()$
 $hypersetup.latex()$
+\hypersetup{colorlinks=true, urlcolor=accent, linkcolor=accent}
 
 \pagenumbering{gobble}
 
@@ -60,11 +76,45 @@ $endif$
 \date{$date$}
 
 \usepackage{titlesec}
-\titleformat{\subsection}
-  {\normalfont\large\bfseries}{\thesubsection}{1em}{\vspace{-0.2em}}[{\titlerule[0.5pt]\vspace{0.2em}}]
+% section headings: uppercase title followed by a hairline
+\newcommand{\cvsectitle}[1]{%
+  \textls[90]{\MakeUppercase{#1}}\hspace{0.7em}%
+  {\color{rule}\leaders\hrule height 0.62ex depth -0.5ex\hfill}}
+\titleformat{\subsection}[hang]
+  {\normalfont\large\bfseries\color{accent}}{}{0pt}{\cvsectitle}
+\titlespacing*{\subsection}{0pt}{1.2em}{0.45em}
 
-\titlespacing*{\section}{0pt}{1em}{1em}
-\titlespacing*{\subsection}{0pt}{1em}{1em}
+% header band (only on the first page), filled in by assets/cv.lua
+\newlength{\cvbandheight}
+\setlength{\cvbandheight}{1.55in}
+\newcommand{\cvname}[1]{%
+  \AddToHookNext{shipout/background}{%
+    \put(0pt,-\cvbandheight){\color{band}\rule{\paperwidth}{\cvbandheight}}%
+    \put(0pt,-\cvbandheight){\color{accent}\rule{\paperwidth}{3pt}}}%
+  \vspace*{0.1in}%
+  \noindent{\color{white}\fontsize{32}{36}\selectfont\bfseries #1}\par\vspace{4pt}}
+\newenvironment{cvcontact}
+  {\noindent\begingroup\small\color{bandtext}\hypersetup{urlcolor=bandtext}}
+  {\endgroup\par\vspace{0.3in}}
+\newcommand{\cvitem}[2]{\mbox{{\color{bandicon}#1}\hspace{0.45em}#2}}
+\newcommand{\cvsep}{\hspace{1.3em plus 1em}}
+
+% experience entries: company, role, right-aligned dates
+\newcommand{\cventry}[3]{%
+  \par\vspace{0.6em}\noindent
+  {\bfseries #1}\hspace{0.5em}{\color{rule}|}\hspace{0.5em}{\color{accent}#2}%
+  \hfill{\small\color{muted}#3}\par\nopagebreak\vspace{0.1em}}
+
+% skills: label column + value
+\newlength{\cvlabelwidth}
+\setlength{\cvlabelwidth}{12.5em}
+\newenvironment{cvskills}{\par\vspace{0.1em}}{\par}
+\newcommand{\cvskill}[2]{%
+  \par\noindent\hangindent=\cvlabelwidth\hangafter=1
+  \makebox[\cvlabelwidth][l]{\bfseries #1}#2\par\vspace{0.2em}}
+
+% right-aligned dates in list items
+\newcommand{\cvdate}[1]{\hfill{\small\color{muted}#1}}
 
 \begin{document}
 $if(has-frontmatter)$

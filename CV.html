@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>README</title>
+  <title>Nikodem Marek</title>
   <style>
 
 span.smallcaps{font-variant: small-caps;}
@@ -21,66 +21,340 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">html {
+  <style type="text/css">:root {
+--band: #14213d;
+--band-2: #1d3a63;
+--band-text: #d6e2f0;
+--band-icon: #7fb7e6;
+--accent: #1d6fa5;
+--accent-soft: #e8f1f8;
+--text: #1a1f2b;
+--muted: #6b7280;
+--rule: #dbe2ea;
+--bg: #eef1f5;
+--paper: #ffffff;
+--shadow: 0 1px 3px rgba(20, 33, 61, 0.08), 0 12px 32px rgba(20, 33, 61, 0.08);
+}
+@media (prefers-color-scheme: dark) {
+:root {
+--band: #0b1324;
+--band-2: #16294a;
+--accent: #6fb1e3;
+--accent-soft: #1b2c42;
+--text: #e4e8ee;
+--muted: #9aa4b2;
+--rule: #2a3444;
+--bg: #0d1118;
+--paper: #161c26;
+--shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+}
+html {
 font-size: 100%;
-widht: 100vw;
+background: var(--bg);
 -webkit-text-size-adjust: 100%;
 -ms-text-size-adjust: 100%;
 }
 body {
-width: 100%;
-padding: 1em;
-margin: auto;
-max-width: 60em;
+box-sizing: border-box;
+max-width: 54rem;
+margin: 2.5rem auto;
+padding: 0 0 2.5rem;
+overflow: hidden;
+background: var(--paper);
+color: var(--text);
+border-radius: 14px;
+box-shadow: var(--shadow);
+font-family: "Source Sans 3", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+font-size: 1.02rem;
+line-height: 1.55;
+hyphens: none;
+}
+body > :not(.cv-header) {
+margin-left: 3rem;
+margin-right: 3rem;
 }
 a {
-color: gray;
+color: var(--accent);
 text-decoration: none;
+background-image: linear-gradient(currentColor, currentColor);
+background-size: 0 1px;
+background-position: 0 100%;
+background-repeat: no-repeat;
+transition: background-size 0.2s ease;
 }
 a:hover {
-color: darkgray;
+background-size: 100% 1px;
 }
-*::-moz-selection {
-background: rgba(255, 255, 0, 0.3);
-color: #000;
+
+.cv-header {
+padding: 3rem 3rem 2.2rem;
+background:
+radial-gradient(circle at 85% -20%, rgba(127, 183, 230, 0.25), transparent 55%),
+linear-gradient(135deg, var(--band), var(--band-2));
+border-bottom: 4px solid var(--accent);
+color: #fff;
 }
-*::selection {
-background: rgba(255, 255, 0, 0.3);
-color: #000;
+.cv-header h1 {
+margin: 0 0 0.9rem;
+font-size: 3rem;
+font-weight: 700;
+line-height: 1.05;
+letter-spacing: -0.02em;
+color: #fff;
 }
-a::-moz-selection {
-background: rgba(255, 255, 0, 0.3);
-color: #0645ad;
+.contact {
+display: flex;
+flex-wrap: wrap;
+gap: 0.5rem;
+margin: 0;
 }
-a::selection {
-background: rgba(255, 255, 0, 0.3);
-color: #0645ad;
+.contact-item {
+display: inline-flex;
+align-items: center;
+gap: 0.45em;
+padding: 0.3em 0.8em;
+font-size: 0.92rem;
+color: var(--band-text);
+background: rgba(255, 255, 255, 0.07);
+border: 1px solid rgba(255, 255, 255, 0.12);
+border-radius: 999px;
+transition: background 0.2s ease, border-color 0.2s ease;
 }
+.contact-item:hover {
+background: rgba(255, 255, 255, 0.14);
+border-color: rgba(255, 255, 255, 0.25);
+}
+.contact-item a {
+color: inherit;
+}
+.icon {
+width: 1em;
+height: 1em;
+flex: none;
+fill: none;
+stroke: var(--band-icon);
+stroke-width: 2;
+stroke-linecap: round;
+stroke-linejoin: round;
+}
+
 h2 {
-padding-bottom: 0.3em;
-border-bottom: 1px solid #ccc;
+display: flex;
+align-items: center;
+gap: 0.8rem;
+margin-top: 2.2rem;
+margin-bottom: 1rem;
+font-size: 0.95rem;
+font-weight: 700;
+letter-spacing: 0.14em;
+text-transform: uppercase;
+color: var(--accent);
+}
+h2::after {
+content: "";
+flex: 1;
+height: 1px;
+background: var(--rule);
+}
+
+.entry {
+position: relative;
+padding: 0 0 1.1rem 1.6rem;
+border-left: 2px solid var(--rule);
+}
+.entry:not(:has(+ .entry)) {
+padding-bottom: 0.2rem;
+}
+.entry::before {
+content: "";
+position: absolute;
+top: 0.45rem;
+left: -7px;
+width: 8px;
+height: 8px;
+background: var(--paper);
+border: 2px solid var(--accent);
+border-radius: 50%;
+}
+.entry:not(.entry + .entry)::before {
+background: var(--accent);
+}
+.entry h4 {
+display: flex;
+flex-wrap: wrap;
+align-items: baseline;
+column-gap: 0.6rem;
+margin: 0 0 0.35rem;
+font-size: 1.05rem;
+font-weight: 700;
+}
+.entry h4 .role {
+font-weight: 500;
+color: var(--accent);
+}
+.entry h4 .role::before {
+content: "|";
+margin-right: 0.6rem;
+color: var(--rule);
+font-weight: 400;
+}
+.dates {
+margin-left: auto;
+padding-left: 1rem;
+font-size: 0.88rem;
+font-weight: 400;
+color: var(--muted);
+white-space: nowrap;
+font-variant-numeric: tabular-nums;
+}
+ul {
+margin: 0.3rem 0 0.6rem;
+padding-left: 1.2rem;
 }
 li {
-margin: 0.2em 0;
+margin: 0.3rem 0;
+padding-left: 0.2rem;
+}
+li::marker {
+content: "▸ ";
+color: var(--accent);
+}
+.dated li > p,
+.dated li {
+display: flex;
+align-items: baseline;
+}
+.dated li::marker {
+content: none;
+}
+.dated li::before {
+content: "▸";
+margin: 0 0.55rem 0 -1rem;
+color: var(--accent);
+}
+
+.skill-row {
+display: grid;
+grid-template-columns: 13.5rem 1fr;
+gap: 0.6rem;
+align-items: baseline;
+padding: 0.35rem 0;
+}
+.skill-row + .skill-row {
+border-top: 1px dashed var(--rule);
+}
+.skill-label,
+.chips {
+margin: 0;
+}
+.skill-label {
+font-weight: 700;
+}
+.chips {
+display: flex;
+flex-wrap: wrap;
+gap: 0.35rem;
+}
+.chip {
+padding: 0.1em 0.65em;
+font-size: 0.9rem;
+color: var(--accent);
+background: var(--accent-soft);
+border-radius: 6px;
+}
+strong {
+font-weight: 700;
+}
+*::selection {
+background: rgba(127, 183, 230, 0.35);
+color: inherit;
+}
+@media (prefers-reduced-motion: no-preference) {
+body {
+animation: rise 0.5s ease-out both;
+}
+@keyframes rise {
+from {
+opacity: 0;
+transform: translateY(12px);
+}
+}
+}
+@media (max-width: 40em) {
+body {
+margin: 0;
+border-radius: 0;
+box-shadow: none;
+}
+body > :not(.cv-header) {
+margin-left: 1.1rem;
+margin-right: 1.1rem;
+}
+.cv-header {
+padding: 2rem 1.1rem 1.6rem;
+}
+.cv-header h1 {
+font-size: 2.2rem;
+}
+.skill-row {
+grid-template-columns: 1fr;
+gap: 0.3rem;
+}
+.dates {
+margin-left: 0;
+padding-left: 0;
+width: 100%;
+}
+.dated li > p,
+.dated li {
+display: block;
+}
+.dated .dates {
+display: block;
+}
+}
+@media print {
+html {
+background: none;
+}
+body {
+max-width: none;
+margin: 0;
+box-shadow: none;
+border-radius: 0;
+animation: none;
+}
+.cv-header {
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+}
 }
 </style>
 </head>
 <body>
-<h1 id="nikodem-marek">Nikodem Marek</h1>
-<p>nmarekpub@proton.me • +48 534 900 231 • Poland<br />
-<a href="https://linkedin.com/in/nikodemmarek">linkedin.com/in/nikodemmarek</a>
-• <a href="https://github.com/NikodemMarek">github.com/NikodemMarek</a></p>
+<section id="nikodem-marek" class="cv-header">
+<h1>Nikodem Marek</h1>
+<div class="contact">
+<span class="contact-item"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6"></polyline></svg><a href="mailto:nmarekpub@proton.me">nmarekpub@proton.me</a></span><span class="contact-item"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg><a href="tel:+48534900231">+48 534 900 231</a></span><span class="contact-item"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3"></circle></svg>Poland</span><span class="contact-item"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2"></circle></svg><a href="https://linkedin.com/in/nikodemmarek">linkedin.com/in/nikodemmarek</a></span><span class="contact-item"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" /></svg><a href="https://github.com/NikodemMarek">github.com/NikodemMarek</a></span>
+</div>
+</section>
 <h2 id="experience">Experience</h2>
-<h4 id="waymo-software-engineer-intern-jul-2026---sep-2026">Waymo
-(Software Engineer Intern, Jul 2026 - Sep 2026)</h4>
+<section id="waymo-software-engineer-intern-jul-2026---sep-2026" class="entry">
+<h4><span class="company">Waymo</span><span class="role">Software
+Engineer Intern</span><span class="dates">Jul 2026 – Sep
+2026</span></h4>
 <ul>
 <li>Built a high-throughput C++ simulation service orchestrating
 thousands of lightweight agents using statistical demand modeling.
 Designed fully deterministic, reproducible traffic generation to enable
 automated verification of mission-critical platforms.</li>
 </ul>
-<h4 id="softnet-software-developer---formerly-intern-jun-2024---jun-2026">SoftNet
-(Software Developer - formerly Intern, Jun 2024 - Jun 2026)</h4>
+</section>
+<section id="softnet-software-developer---formerly-intern-jun-2024---jun-2026" class="entry">
+<h4><span class="company">SoftNet</span><span class="role">Software
+Developer - formerly Intern</span><span class="dates">Jun 2024 – Jun
+2026</span></h4>
 <ul>
 <li>Implemented Docker to create standardized development environments,
 reducing the time and steps required to initialize a local instance from
@@ -92,41 +366,73 @@ with nearly 100% test coverage, simplifying bug report handling.</li>
 and secret detection. partnered with auditors to implement
 industry-standard security protocols.</li>
 </ul>
-<h4 id="formation-x-waymo-fellowship-fellow-jul-2025---jan-2026">Formation x
-Waymo Fellowship (Fellow, Jul 2025 - Jan 2026)</h4>
+</section>
+<section id="formation-x-waymo-fellowship-fellow-jul-2025---jan-2026" class="entry">
+<h4><span class="company">Formation x Waymo Fellowship</span><span class="role">Fellow</span><span class="dates">Jul 2025 – Jan
+2026</span></h4>
 <ul>
 <li>Mastered advanced algorithmic optimization, data structures, and
 scalable architecture for high-availability distributed systems.</li>
 <li>Refined code quality and architectural standards through intensive
 technical deep-dives and reviews by Waymo and FAANG mentors.</li>
 </ul>
-<h4 id="weimpact.ai-full-stack-developer-apr-2022---dec-2023">WeImpact.AI
-(Full-Stack Developer, Apr 2022 - Dec 2023)</h4>
+</section>
+<section id="weimpact.ai-full-stack-developer-apr-2022---dec-2023" class="entry">
+<h4><span class="company">WeImpact.AI</span><span class="role">Full-Stack Developer</span><span class="dates">Apr 2022 –
+Dec 2023</span></h4>
 <ul>
 <li>Developed key features for a SvelteKit/Firebase app, optimized
 database read operations to reduce cloud costs, and implemented an
 open-source onboarding flow that cut monthly licensing fees.</li>
 </ul>
+</section>
 <h2 id="skills">Skills</h2>
-<ul>
-<li><strong>Programming Languages:</strong> Java, TypeScript, Python,
-Rust, Nix, Bash</li>
-<li><strong>Frameworks &amp; Libraries:</strong> Spring (Java), Angular,
-SvelteKit, React, React Native, Node.js, Android</li>
-<li><strong>Tools &amp; Technologies:</strong> Linux, Git, GitHub,
-GitLab, Docker, Firebase, Vim</li>
-<li><strong>Languages:</strong> Polish - Proficient, English - Fluent,
-German - Basic</li>
-</ul>
+<div class="skills">
+<div class="skill-row">
+<div class="skill-label">
+Programming Languages
+</div>
+<div class="chips">
+<span class="chip">Java</span><span class="chip">TypeScript</span><span class="chip">Python</span><span class="chip">Rust</span><span class="chip">Nix</span><span class="chip">Bash</span>
+</div>
+</div>
+<div class="skill-row">
+<div class="skill-label">
+Frameworks &amp; Libraries
+</div>
+<div class="chips">
+<span class="chip">Spring (Java)</span><span class="chip">Angular</span><span class="chip">SvelteKit</span><span class="chip">React</span><span class="chip">React Native</span><span class="chip">Node.js</span><span class="chip">Android</span>
+</div>
+</div>
+<div class="skill-row">
+<div class="skill-label">
+Tools &amp; Technologies
+</div>
+<div class="chips">
+<span class="chip">Linux</span><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">GitLab</span><span class="chip">Docker</span><span class="chip">Firebase</span><span class="chip">Vim</span>
+</div>
+</div>
+<div class="skill-row">
+<div class="skill-label">
+Languages
+</div>
+<div class="chips">
+<span class="chip">Polish – Proficient</span><span class="chip">English
+– Fluent</span><span class="chip">German – Basic</span>
+</div>
+</div>
+</div>
 <h2 id="education-qualifications">Education &amp; Qualifications</h2>
+<div class="dated">
 <ul>
-<li>Bachelor of Engineering in Cybersecurity AGH University of Krakow
-(2024 - Present)</li>
-<li>Information Technology Technician Zespół Szkół Łączności (2019 -
-2024)</li>
+<li><span>Bachelor of Engineering in Cybersecurity AGH University of
+Krakow</span><span class="dates">2024 – Present</span></li>
+<li><span>Information Technology Technician Zespół Szkół
+Łączności</span><span class="dates">2019 – 2024</span></li>
 <li>Java Mobile App Development Certification</li>
 <li>Wazuh Tool Administration Training</li>
 </ul>
+</div>
 <h2 id="achievements">Achievements</h2>
 <ul>
 <li><strong>Winner, Motorola Science Cup (2021):</strong> Won as part of

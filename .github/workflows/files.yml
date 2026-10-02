@@ -17,15 +17,15 @@ jobs:
 
       - name: Generate pdf file
         run: |
-          pandoc README.md --css assets/styles.css --template assets/template.tex --embed-resources --standalone -o CV.pdf
+          pandoc README.md --lua-filter assets/cv.lua --css assets/styles.css --template assets/template.tex --embed-resources --standalone -o CV.pdf
 
       - name: Generate html file
         run: |
-          pandoc README.md --css assets/styles.css --embed-resources --standalone -o CV.html
+          pandoc README.md --lua-filter assets/cv.lua --css assets/styles.css --embed-resources --standalone -o CV.html
 
       - name: Generate docx file
         run: |
-          pandoc README.md --css assets/styles.css --embed-resources --standalone -o CV.docx
+          pandoc README.md --lua-filter assets/cv.lua --css assets/styles.css --embed-resources --standalone -o CV.docx
 
       - name: Upload generated files as artifact
         uses: actions/upload-artifact@v4
