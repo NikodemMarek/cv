@@ -26,9 +26,9 @@ nmarekpub@proton.me • +48 534 900 231 • Poland
 
 ## Skills
 
-- **Programming Languages:** Java, TypeScript, Python, Rust, Nix, Bash
+- **Programming Languages:** Java, C++, TypeScript, Python, Rust, Nix, Bash
 - **Frameworks & Libraries:** Spring (Java), Angular, SvelteKit, React, React Native, Node.js, Android
-- **Tools & Technologies:** Linux, Git, GitHub, GitLab, Docker, Firebase, Vim
+- **Tools & Technologies:** Linux, Git, GitHub, GitLab, Docker, Kubernetes, Firebase, Vim
 - **Languages:** Polish - Proficient,  English - Fluent, German - Basic
 
 ## Education & Qualifications
